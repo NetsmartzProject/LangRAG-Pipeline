@@ -1,0 +1,20 @@
+query,expected,result,time,relevance
+What's the weather in London?,Weather information for London including temperature and conditions.,"I'm sorry, but I can't provide real-time information such as the current weather in London. You might want to check a reliable weather website or app for the most up-to-date information.",7.839121580123901,0.6
+Tell me about Abhinandan's skills,"Information about Abhinandan's programming skills, experience, and technical abilities.","Abhinandan's skills include programming in Python, FastAPI, REST APIs, PostgreSQL, JavaScript, and ReactJs. He is also skilled in machine learning, natural language processing (NLP), and generative AI (GenAI). Abhinandan has experience with tools and technologies such as Git/Github, Redux, RTK Query, MongoDB, and vector databases. Additionally, he is knowledgeable in using transformers, embeddings, and working with large language models (LLMs) and the Hugging Face platform.",6.304477214813232,0.4
+What experience does Abhinandan have?,Details about Abhinandan's work experience and professional background.,"Abhinandan has experience as an Associate Software Engineer specializing in AI/ML at NETSMARTZ LLC, starting from July 10, 2023, in Chandigarh, India. In this role, he took ownership of developing a recommendation engine, designing system architecture, algorithms, and data flow, and creating a proof of concept (POC). He developed and integrated real-time APIs for recommending similar products using TF-IDF vectorization and cosine similarity, enhancing user experience with personalized product suggestions. Additionally, he developed and integrated real-time APIs for managing product data, including smart search, adding, updating, and deleting products. He designed and implemented smart search functionality for an e-commerce API using TF-IDF vectorization, cosine similarity, and FuzzyWuzzy for handling misspellings, with attribute-based weighting to prioritize search results.",5.819106817245483,0.4
+What is Abhinandan's educational background?,"Information about Abhinandan's education, degrees, and academic achievements.","Abhinandan completed a Bachelor of Technology in Computer Science from Indo Global College of Engineering, New Chandigarh, in June 2023, with a cumulative GPA of 8.01 out of 10.00.",2.7525241374969482,0.0
+Do the Abhinandan Kumar any Job offers?,Yes they have from Skillzo Company for AGentic Ai,"Yes, Abhinandan Kumar has a job offer for the position of Generative AI Engineer – Agentic Systems at Skillzo.",1.9694743156433105,0.5714285714285714
+what is the Salary Structure of Skillzo which is provided to Abhinandan Kumar?,Detail Salary slip of Skillzo,"The salary structure provided to Abhinandan Kumar at Skillzo is as follows:
+
+- **Basic Pay**: ₹35,000 per month, totaling ₹420,000 annually.
+- **L&D Budget**: Up to ₹2,000 per month, totaling up to ₹24,000 annually.
+- **Variable Performance Bonus**: Up to ₹56,000 annually.
+- **Annual CTC**: ₹5 Lakhs.",3.4899840354919434,0.6666666666666666
+What technologies does Abhinandan know?,"List of technologies, programming languages, and frameworks that Abhinandan is proficient in.","Abhinandan is knowledgeable in the following technologies:
+
+- Programming Languages: Python, JavaScript
+- Frameworks and Libraries: FastAPI, ReactJs, Redux, RTK Query
+- Databases: PostgreSQL, MongoDB, Vector database
+- Machine Learning and AI: Machine Learning, NLP, GenAI, Transformers, LLM (Large Language Models), Hugging-Face, Recommendation Engines, RAG (Retrieval-Augmented Generation), Embeddings
+- Tools: Git/Github
+- APIs: REST APIs",4.404235363006592,0.2

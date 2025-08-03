@@ -1,0 +1,28 @@
+query,expected,result,time,relevance
+What's the weather in London?,Weather information for London including temperature and conditions.,No appropriate response found,8.041489362716675,0.0
+Tell me about Abhinandan's skills,"Information about Abhinandan's programming skills, experience, and technical abilities.","Abhinandan's skills include:
+
+- Programming: Python, FastAPI, REST APIs, PostgreSQL, JavaScript, ReactJs, Redux, RTK Query
+- Machine Learning and NLP
+- Generative AI (GenAI)
+- Transformers
+- Tools: Git/Github
+- General: Large Language Models (LLM), Hugging Face, Recommendation Engine, MongoDB, Retrieval-Augmented Generation (RAG), Transformer, Vector database, embeddings",13.897368431091309,0.4
+What experience does Abhinandan have?,Details about Abhinandan's work experience and professional background.,"Abhinandan Kumar has experience as an Associate Software Engineer specializing in AI/ML at NETSMARTZ LLC, starting from July 10, 2023, in Chandigarh, India. In this role, he has taken ownership of developing a recommendation engine, designing its system architecture, algorithms, and data flow, and creating a proof of concept. He has developed and integrated real-time APIs for recommending similar products using TF-IDF vectorization and cosine similarity, enhancing user experience with personalized product suggestions. Additionally, he has developed and integrated real-time APIs for managing product data, including smart search functionalities using TF-IDF vectorization, cosine similarity, and FuzzyWuzzy for handling misspellings, with attribute-based weighting to prioritize search results.",13.855492353439331,0.4
+What is Abhinandan's educational background?,"Information about Abhinandan's education, degrees, and academic achievements.",No appropriate response found,6.395287990570068,0.0
+Do the Abhinandan Kumar any Job offers?,Yes they have from Skillzo Company for AGentic Ai,No appropriate response found,4.255197286605835,0.0
+what is the Salary Structure of Skillzo which is provided to Abhinandan Kumar?,Detail Salary slip of Skillzo,"The salary structure for Abhinandan Kumar at Skillzo is as follows:
+
+- **Basic Pay**: ₹35,000 per month, totaling ₹420,000 annually.
+- **Learning & Development (L&D) Budget**: Up to ₹2,000 per month, totaling up to ₹24,000 annually.
+- **Variable Performance Bonus**: Up to ₹56,000 annually.
+- **Annual Cost to Company (CTC)**: ₹5,00,000.",10.903698921203613,0.5833333333333334
+What technologies does Abhinandan know?,"List of technologies, programming languages, and frameworks that Abhinandan is proficient in.","Abhinandan is knowledgeable in the following technologies:
+
+- Programming Languages: Python, JavaScript
+- Frameworks and Libraries: FastAPI, ReactJs, Redux, RTK Query
+- Databases: PostgreSQL, MongoDB, Vector database
+- Machine Learning and NLP: Machine Learning, NLP, GenAI, Transformers, Hugging-Face, Recommendation Engines, LLM (Large Language Models), RAG (Retrieval-Augmented Generation), embeddings
+- Tools: Git/Github
+- APIs: REST APIs
+- Other: Smart Search, Multi-Tenancy systems, real-time API development, TF-IDF vectorization, cosine similarity, FuzzyWuzzy for handling misspellings, attribute-based weighting for search results.",13.923943996429443,0.2
