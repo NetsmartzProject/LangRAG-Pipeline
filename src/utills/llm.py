@@ -52,7 +52,7 @@ class LLMManager:
                 # Option 2: Use OpenAI
                 LLMManager._llm = ChatOpenAI(
                     model="gpt-4o",
-                    api_key=settings.GROQ_API_KEY,
+                    api_key="OPENAIKEY",
                     temperature=0.1,
                     max_tokens=1024,
                     max_retries=2,
