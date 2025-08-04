@@ -1,8 +1,11 @@
 import requests
 from langchain_core.tools import tool
-
-from config.settings import settings
+from langchain_core.prompts import ChatPromptTemplate
+from langchain_core.output_parsers import StrOutputParser
 from config.logger import logger
+from config.settings import settings
+
+
 
 
 class WeatherTools:
@@ -107,30 +110,30 @@ class DocumentTools:
     
     @property
     def query_document_tool(self):
-        """
-        Create and return the query_document tool.
-        
-        Returns:
-            Tool: The query_document tool
-        """
         @tool
         def query_document(query: str) -> str:
-            """Query the document to answer a question. Use this tool for any document-related queries."""
+            """Query the document to answer a question."""
             if not self.retriever or not self.rag_chain:
-                return "No documents have been loaded in the resume_collection."
+                return "No documents have been loaded."
             
             try:
-                # Use the RAG chain to answer the question
+                # Get raw documents
+                docs = self.retriever.get_relevant_documents(query)
+                
+                # Format documents
+                context = "\n\n".join(doc.page_content for doc in docs)
+                
+                # Use the RAG chain directly with the query
                 response = self.rag_chain.invoke(query)
                 
-                # Format the response to match the expected output format
-                if isinstance(response, str) and not response.startswith("answer="):
-                    response = f"answer='{response}'"
+                # The response should be a string
+                answer = str(response)
                 
-                logger.info(f"Document query processed: {query[:50]}...")
-                return response
+                # Format response
+                return f"answer='{answer}'"
+                
             except Exception as e:
                 logger.error(f"Error querying document: {str(e)}")
-                return f"Error retrieving information from the resume collection: {str(e)}"
+                return f"Error querying document: {str(e)}"
         
         return query_document

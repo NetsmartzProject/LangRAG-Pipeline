@@ -70,38 +70,22 @@ class AgentNode:
         return self.weather_agent
     
     def create_rag_agent(self, query_document_tool):
-        """
-        Create the RAG agent.
-        
-        Args:
-            query_document_tool: Tool for querying documents
-            
-        Returns:
-            Agent: The RAG agent
-        """
+        """Create the RAG agent with better prompting."""
         if not self.rag_agent:
-            logger.info("Creating RAG agent")
             self.rag_agent = create_react_agent(
                 model=self.llm,
                 tools=[query_document_tool],
                 name="rag_agent",
                 system_message=(
                     "You are a specialized document assistant that answers questions based ONLY on the content in the provided documents.\n"
-                    "Use the query_document tool to find information in the documents. ALWAYS use this tool for EVERY question, no exceptions.\n"
-                    "IMPORTANT: Always extract and present the answer from the tool's response. The tool response will be in the format answer='...'. Extract just the content inside the quotes.\n"
-                    "Only provide information that is explicitly mentioned in the documents. DO NOT use your general knowledge or make assumptions.\n"
-                    "Be helpful, concise, and focus only on document-related queries.\n"
-                    "If no documents are available, inform the user they need to upload a document first.\n"
-                    "NEVER respond with generic messages like 'conversation completed' or 'transferring back'. Always provide a substantive answer based on the document content.\n"
-                    "NEVER respond with 'I don't have information' without first attempting to use the query_document tool."
-                ),
-                max_iterations=3  # Give it more chances to use the tool
+                    "Use the query_document tool to find information in the documents. ALWAYS use this tool for EVERY question.\n"
+                    "Only provide information that is explicitly mentioned in the documents.\n"
+                    "Extract the answer from the tool's response (format: answer='...').\n"
+                    "Be precise and comprehensive in your answers.\n"
+                    "If you can't find the information, say so clearly."
+                )
             )
-            logger.info("RAG agent created")
-        else:
-            logger.info("Using existing RAG agent")
         return self.rag_agent
-    
     def create_supervisor_agent(self):
         """
         Create the supervisor agent.

@@ -140,8 +140,10 @@ class AgentWorkflow:
                 
                 # Clean up tool responses if needed
                 if role == "tool" and content.startswith("answer="):
-                    # Keep the format as is for exact matching with expected output
-                    pass
+                    # Extract just the content inside the quotes
+                    content = content[7:].strip("'")
+                    if content.startswith("'") and content.endswith("'"):
+                        content = content[1:-1]
                 
                 # Add the message to the list
                 messages.append({

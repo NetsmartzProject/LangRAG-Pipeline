@@ -4,8 +4,14 @@ from langchain.text_splitter import RecursiveCharacterTextSplitter
 import qdrant_client
 from qdrant_client.models import Distance, VectorParams
 
-from config.settings import settings
 from config.logger import logger
+from config.settings import settings
+QDRANT_URL = "http://localhost:6333"
+QDRANT_COLLECTION_NAME = "resume_collection"
+EMBEDDING_MODEL_NAME = "BAAI/bge-large-en"
+EMBEDDING_MODEL_DEVICE = "cpu"
+EMBEDDING_NORMALIZE = False
+RETRIEVAL_K = 3
 
 
 class EmbeddingsManager:
@@ -26,7 +32,7 @@ class EmbeddingsManager:
         """
         if cls._instance is None:
             cls._instance = super(EmbeddingsManager, cls).__new__(cls)
-            cls._instance.collection_name = collection_name or settings.QDRANT_COLLECTION_NAME
+            cls._instance.collection_name = collection_name 
             logger.info(f"Creating new EmbeddingsManager instance with collection: {cls._instance.collection_name}")
         return cls._instance
     
@@ -110,19 +116,11 @@ class EmbeddingsManager:
             return False
     
     def get_retriever(self):
-        """
-        Get a retriever from an existing vector store.
-        
-        Returns:
-            Retriever: Document retriever
-        """
+        """Get a retriever with optimized settings."""
         try:
-            # Check if collection exists
             if not self.check_collection_exists():
-                logger.warning(f"Collection {self.collection_name} does not exist")
                 return None
-            
-            # Initialize connection to existing vector store
+                
             embeddings = self.get_embeddings_model()
             client = self.get_qdrant_client()
             
@@ -132,13 +130,12 @@ class EmbeddingsManager:
                 embeddings=embeddings
             )
         
-            # Create retriever
+            # Create retriever with optimized settings
             retriever = vector_store.as_retriever(
                 search_type="similarity", 
                 search_kwargs={"k": settings.RETRIEVAL_K}
             )
             
-            logger.info(f"Retriever initialized with k={settings.RETRIEVAL_K}")
             return retriever
         except Exception as e:
             logger.error(f"Error getting retriever: {str(e)}")

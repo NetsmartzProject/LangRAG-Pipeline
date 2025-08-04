@@ -6,6 +6,7 @@ from langchain_core.runnables import RunnablePassthrough
 
 from config.settings import settings
 from config.logger import logger
+from schema.schema import AnswerResponse
 
 
 class LLMManager:
@@ -52,11 +53,9 @@ class LLMManager:
                 # Option 2: Use OpenAI
                 LLMManager._llm = ChatOpenAI(
                     model="gpt-4o",
-                    api_key="OPENAIKEY",
+                    api_key=settings.OPENAI_API_KEY,
                     temperature=0.1,
-                    max_tokens=1024,
-                    max_retries=2,
-                    request_timeout=30,
+                    max_tokens=1024
                 )
                 
                 logger.info(f"LLM initialized with model: {settings.LLM_MODEL}")
@@ -116,8 +115,4 @@ class LLMManager:
             | StrOutputParser()
         )
         
-        # Wrap the response in the expected format
-        def wrap_response(response):
-            return f"answer='{response}'"
-        
-        return rag_chain | wrap_response
+        return rag_chain 
